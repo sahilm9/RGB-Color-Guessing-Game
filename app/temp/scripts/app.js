@@ -86,6 +86,13 @@ colorDisplay = document.getElementById("colorDisplay"),
     // Converting an array like object into Array, can also be done [].slice.call()
 contentAnimate = document.querySelector(".content-animation").classList;
 
+(function () {
+	// Invoke the functions
+	modeButtonsSetup();
+	squaresSetup();
+	reset();
+})(); // using Immediately Invoked Function Expression
+
 function modeButtonsSetup() {
 	// Map modeButtons array to check for clicks
 	modeButtons.map(function (modeButton) {
@@ -197,7 +204,7 @@ function getRandomColor() {
 	var g = Math.floor(Math.random() * 256);
 	//pick a "blue" from  0 -255
 	var b = Math.floor(Math.random() * 256);
-	// return rgb(r,g,b) 
+	// return rgb(r,g,b)
 	return "rgb(" + r + ", " + g + ", " + b + ")";
 }
 
