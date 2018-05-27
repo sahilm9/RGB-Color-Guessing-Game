@@ -11,7 +11,7 @@ contentAnimate = document.querySelector(`.content-animation`).classList;
 
 
 function modeButtonsSetup(){
-  // Map modeButtons array to check for click listeners
+  // Map modeButtons array to check for clicks
 	modeButtons.map((modeButton) => {
     // add eventListener for each modeButton
 		modeButton.addEventListener(`click`, function(){
@@ -25,5 +25,31 @@ function modeButtonsSetup(){
       // reset the game if clicked on any of the modeButtons
 			reset();
 		});
-	})
-}
+	});
+};
+
+function squaresSetup(){
+  // map squares array to checks for clicks
+	squares.map(square => {
+        // add click listeners to squares
+		square.addEventListener(`click`, function(){
+			//grab color of clicked square
+			let clickedColor = this.style.backgroundColor;
+			//compare color to pickedColor
+			if(clickedColor === pickedColor){
+        // Display message as 'Correct!'
+				messageDisplay.textContent = `Correct!`;
+        // Change resetButton text as 'Play Again?'
+				resetButton.textContent = `Play Again?`
+        // Call changeColors by passing clicked color which is equal to pickedColor, changeColors changes colors of Squares with the the color it receives as parameter
+				changeColors(clickedColor);
+			}
+			else {
+        // Clicked color not equal to picked color, change backgroundColor of square to background color of body
+				this.style.backgroundColor = `#eee`;
+        // Display Text 'Try again'
+				messageDisplay.textContent = `Try Again`;
+			}
+		});
+	});
+};
