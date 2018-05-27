@@ -8,3 +8,22 @@ h1 = document.querySelector(`h1`),
 resetButton = document.querySelector(`#reset`),
 modeButtons = Array.from(document.querySelectorAll(`.mode`)), // Converting an array like object into Array, can also be done [].slice.call()
 contentAnimate = document.querySelector(`.content-animation`).classList;
+
+
+function modeButtonsSetup(){
+  // Map modeButtons array to check for click listeners
+	modeButtons.map((modeButton) => {
+    // add eventListener for each modeButton
+		modeButton.addEventListener(`click`, function(){
+      // Remove selected class for both the buttons
+			modeButtons[0].classList.remove(`selected`);
+			modeButtons[1].classList.remove(`selected`);
+      // add selected class for the button clicked
+			this.classList.add(`selected`);
+      // see if selected button is easy or hard and assign numSquares based on it.
+			this.textContent === `Easy` ? numSquares = 6: numSquares = 9;
+      // reset the game if clicked on any of the modeButtons
+			reset();
+		});
+	})
+}
