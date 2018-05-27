@@ -1,0 +1,11 @@
+/* Container Styles */
+.square {
+	width: 30%;
+	padding-bottom: 30%;
+	float: left;
+	margin: 1.66%;
+	border-radius: 25%;
+	transition: background 0.5s ease-in;
+	-webkit-transition: background 0.5s ease-in;
+	-moz-transition: background 0.5s ease-in;
+}

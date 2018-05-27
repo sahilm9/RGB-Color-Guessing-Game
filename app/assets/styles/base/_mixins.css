@@ -1,0 +1,7 @@
+@define-mixin textShadowEffect{
+  text-shadow:2px 1px rgba(0, 0, 0,0.9);
+}
+@define-mixin positionEffectOnActive{
+  position:relative;
+	top:3px;
+}
