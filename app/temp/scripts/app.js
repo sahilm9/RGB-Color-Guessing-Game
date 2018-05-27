@@ -179,5 +179,16 @@ function colorPick() {
 	return colors[random];
 }
 
+function randomColorsGenerator(num) {
+	var arr = [];
+	//loop num(numSquare) times
+	for (var i = 0; i < num; i++) {
+		//get random color and push into arr
+		arr.push(getRandomColor());
+	}
+	// return that array
+	return arr;
+}
+
 /***/ })
 /******/ ]);

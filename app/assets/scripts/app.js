@@ -106,3 +106,15 @@ function colorPick(){
   // return random color of from colors array
 	return colors[random];
 }
+
+
+function randomColorsGenerator(num){
+	let arr = [];
+	//loop num(numSquare) times
+	for(let i = 0; i < num; i++){
+		//get random color and push into arr
+		arr.push(getRandomColor())
+	}
+	// return that array
+	return arr;
+}
