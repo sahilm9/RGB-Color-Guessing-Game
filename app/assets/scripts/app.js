@@ -86,3 +86,15 @@ resetButton.addEventListener(`click`, function(){
   // Call reset function
 	reset();
 })
+
+
+function changeColors(color){
+  // map squares array to change color of each square
+	squares.map(square => {
+    // Set the backgroundColor of square to the color passed as parameter to the function
+		square.style.backgroundColor = color;
+	})
+  // Add animated flash property, as correct color is clicked
+	contentAnimate.add(`animated`);
+	contentAnimate.add(`flash`);
+}
