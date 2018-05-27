@@ -98,3 +98,11 @@ function changeColors(color){
 	contentAnimate.add(`animated`);
 	contentAnimate.add(`flash`);
 }
+
+
+function colorPick(){
+  // pick a random number
+	let random = Math.floor(Math.random() * colors.length);
+  // return random color of from colors array
+	return colors[random];
+}

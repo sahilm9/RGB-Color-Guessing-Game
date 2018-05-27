@@ -172,5 +172,12 @@ function changeColors(color) {
 	contentAnimate.add("flash");
 }
 
+function colorPick() {
+	// pick a random number
+	var random = Math.floor(Math.random() * colors.length);
+	// return random color of from colors array
+	return colors[random];
+}
+
 /***/ })
 /******/ ]);
