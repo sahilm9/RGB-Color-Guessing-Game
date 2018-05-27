@@ -53,3 +53,27 @@ function squaresSetup(){
 		});
 	});
 };
+
+function reset(){
+  // Call the randomColorsGenerator with numSquare default value or value selected
+	colors = randomColorsGenerator(numSquares);
+	//pick a new random color from array
+	pickedColor = colorPick();
+	//change colorDisplay to match picked Color
+	colorDisplay.textContent = pickedColor;
+  // change restButton text to 'New Colors'
+	resetButton.textContent = `New Colors`;
+  // change messageDisplay text to ''
+	messageDisplay.textContent = ``;
+	//change colors of squares
+	for(let i = 0; i < squares.length; i++){
+		if(colors[i]){
+      // Set the properties of current square to following
+			squares[i].style.display = `block`;
+			squares[i].style.backgroundColor = colors[i];
+		}
+		else {
+			squares[i].style.display = `none`;
+		}
+	}
+}
