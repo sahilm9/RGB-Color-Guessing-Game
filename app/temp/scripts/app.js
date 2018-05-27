@@ -152,5 +152,14 @@ function reset() {
 	}
 }
 
+// listen for click on resetButton
+resetButton.addEventListener("click", function () {
+	// Remove animated flash property
+	contentAnimate.remove("animated");
+	contentAnimate.remove("flash");
+	// Call reset function
+	reset();
+});
+
 /***/ })
 /******/ ]);
